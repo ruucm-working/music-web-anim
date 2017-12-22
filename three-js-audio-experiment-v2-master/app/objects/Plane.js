@@ -11,11 +11,7 @@ export default class Plane extends BaseThreeObj {
 
     this.geom = new THREE.PlaneGeometry(50, 50, 20, 20);
 
-    this.mat = new THREE.MeshBasicMaterial({
-      color: 0x34495e,
-      side: THREE.DoubleSide,
-      wireframe: true
-    });
+    this.mat = new THREE.MeshBasicMaterial({ color: "#FEDF00", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5, opacity: 0.8, roughness: 1 });
 
     this.active = true;
     this.addMesh();

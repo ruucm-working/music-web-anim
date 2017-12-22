@@ -12,12 +12,8 @@ export default class Ring extends BaseThreeObj {
     this.geom = new THREE.RingGeometry(20, 5, 32);
 
     this.mat = new THREE.MeshBasicMaterial({
-      color: 0xa66bbe,
-      side: THREE.DoubleSide,
-      wireframe: true,
-      opacity: 0.2,
-      transparent : true
-    });
+        color: "#C381CA",
+        transparent: true, side: THREE.DoubleSide, alphaTest: 0.5, opacity: 0.8, roughness: 1 });
 
     this.active = true;
     this.addMesh();

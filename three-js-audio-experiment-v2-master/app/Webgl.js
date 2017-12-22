@@ -25,7 +25,7 @@ export default class Webgl {
 
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setSize(width, height);
-    this.renderer.setClearColor(0x262626);
+    this.renderer.setClearColor(0x000000);
 
     this.usePostprocessing = true;
     this.composer = new WAGNER.Composer(this.renderer);
@@ -53,6 +53,18 @@ export default class Webgl {
     this.ring.removeMesh();
     this.cube.removeMesh();
     this.plane.removeMesh();
+    // Load the background texture
+    var texture = THREE.ImageUtils.loadTexture( 'back.jpg' );
+    var backgroundMesh = new THREE.Mesh(
+        new THREE.PlaneGeometry(2, 2, 0),
+        new THREE.MeshBasicMaterial({
+            map: texture
+        }));
+
+    backgroundMesh .material.depthTest = false;
+    backgroundMesh .material.depthWrite = false;
+
+    this.scene.add(backgroundMesh );
 
   }
 

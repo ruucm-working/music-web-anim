@@ -80,12 +80,12 @@ function animate() {
 }
 
 function rgbToHex(color) {
-  let hex = {
-    r: (parseInt(color.r) + 0x10000).toString(16).substr(-2).toUpperCase(),
-    g: (parseInt(color.g) + 0x10000).toString(16).substr(-2).toUpperCase(),
-    b: (parseInt(color.b) + 0x10000).toString(16).substr(-2).toUpperCase()
-  }
-  let newColor = "0x" + hex.r + hex.g + hex.b;
-  console.log('newColor', newColor)
-  return newColor;
+  // let hex = {
+  //   r: (parseInt(color.r) + 0x10000).toString(16).substr(-2).toUpperCase(),
+  //   g: (parseInt(color.g) + 0x10000).toString(16).substr(-2).toUpperCase(),
+  //   b: (parseInt(color.b) + 0x10000).toString(16).substr(-2).toUpperCase()
+  // }
+  // let newColor = "0x" + hex.r + hex.g + hex.b;
+  // console.log('newColor', newColor)
+  // return newColor;
 }

@@ -19,12 +19,13 @@ export default class Sphere extends BaseThreeObj {
     };
     image.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAGUlEQVQoU2NkYGD4z4AHMP7//x+/gmFhAgCXphP14bko/wAAAABJRU5ErkJggg==';
 
-    this.mat = new THREE.MeshBasicMaterial({
-      color: 0x07019A,
-      side: THREE.DoubleSide, 
-      wireframe: false,
-      alphamap: alphaMap
-    });
+    // this.mat = new THREE.MeshBasicMaterial({
+    //   color: 0x07019A,
+    //   side: THREE.DoubleSide, 
+    //   wireframe: false,
+    //   alphamap: alphaMap
+    // });
+    this.mat = new THREE.MeshBasicMaterial({ color: "#07019A", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5, opacity: 0.8, roughness: 1 });
     // this.mat = new THREE.MeshStandardMaterial({ color: "#444", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5, opacity: 1, roughness: 1 });
 
     this.active = true;

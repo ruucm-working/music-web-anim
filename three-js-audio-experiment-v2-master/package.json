@@ -10,9 +10,9 @@
     "build": "browserify -t babelify -t stripify app/index.js | uglifyjs -o build/main.js"
   },
   "author": "HENG Patrick",
-  "license" :
-  { "type" : "CC-BY-NC-SA",
-    "url" : "https://github.com/patrickheng/three-js-audio-experiment-v2/blob/master/LICENSE.md"
+  "license": {
+    "type": "CC-BY-NC-SA",
+    "url": "https://github.com/patrickheng/three-js-audio-experiment-v2/blob/master/LICENSE.md"
   },
   "dependencies": {
     "dat-gui": "^0.5.0",
@@ -20,7 +20,7 @@
     "gsap": "^1.17.0",
     "raf": "^3.0.0",
     "stats-js": "^1.0.0-alpha1",
-    "three": "^0.71.0",
+    "three": "^0.71.1",
     "three-orbit-controls": "^71.0.0"
   },
   "devDependencies": {
