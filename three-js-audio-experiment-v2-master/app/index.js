@@ -22,43 +22,43 @@ domready(() => {
   document.body.appendChild(webgl.renderer.domElement);
 
   // GUI settings
-  gui = new dat.GUI();
+  // gui = new dat.GUI();
 
-  let sphereFolder = gui.addFolder('Sphere');
-  let cubeFolder = gui.addFolder('Cube');
-  let ringFolder = gui.addFolder('Ring');
-  let planeFolder = gui.addFolder('Plane');
+  // let sphereFolder = gui.addFolder('Sphere');
+  // let cubeFolder = gui.addFolder('Cube');
+  // let ringFolder = gui.addFolder('Ring');
+  // let planeFolder = gui.addFolder('Plane');
 
-  gui.add(webgl, 'usePostprocessing');
+  // gui.add(webgl, 'usePostprocessing');
 
-  sphereFolder.add(webgl.sphere, 'active').onChange(function(value) {
-    webgl.sphere.toggleMesh();
-  });
-  cubeFolder.add(webgl.cube, 'active').onChange(function(value) {
-    webgl.cube.toggleMesh();
-  });
-  ringFolder.add(webgl.ring, 'active').onChange(function(value) {
-    webgl.ring.toggleMesh();
-  });
-  planeFolder.add(webgl.plane, 'active').onChange(function(value) {
-    webgl.plane.toggleMesh();
-  });
+  // // sphereFolder.add(webgl.sphere, 'active').onChange(function(value) {
+  // //   webgl.sphere.toggleMesh();
+  // // });
+  // cubeFolder.add(webgl.cube, 'active').onChange(function(value) {
+  //   webgl.cube.toggleMesh();
+  // });
+  // ringFolder.add(webgl.ring, 'active').onChange(function(value) {
+  //   webgl.ring.toggleMesh();
+  // });
+  // planeFolder.add(webgl.plane, 'active').onChange(function(value) {
+  //   webgl.plane.toggleMesh();
+  // });
 
-  sphereFolder.open();
-  cubeFolder.open();
-  ringFolder.open();
-  planeFolder.open();
+  // sphereFolder.open();
+  // cubeFolder.open();
+  // ringFolder.open();
+  // planeFolder.open();
 
-  //Stats js
-  stats = new Stats();
-  stats.setMode(0); // 0: fps, 1: ms
+  // //Stats js
+  // stats = new Stats();
+  // stats.setMode(0); // 0: fps, 1: ms
 
   // Align top-left
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
+  // stats.domElement.style.position = 'absolute';
+  // stats.domElement.style.left = '0px';
+  // stats.domElement.style.top = '0px';
 
-  document.body.appendChild(stats.domElement);
+  // document.body.appendChild(stats.domElement);
 
   // handle resize
   window.onresize = resizeHandler;
@@ -73,10 +73,10 @@ function resizeHandler() {
 }
 
 function animate() {
-  stats.begin();
+  // stats.begin();
   raf(animate);
   webgl.render();
-  stats.end();
+  // stats.end();
 }
 
 function rgbToHex(color) {

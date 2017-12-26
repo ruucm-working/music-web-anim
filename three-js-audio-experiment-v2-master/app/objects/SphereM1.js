@@ -3,7 +3,7 @@
 import THREE from 'three';
 import BaseThreeObj from './BaseThreeObj.js';
 
-export default class Sphere extends BaseThreeObj {
+export default class Sphere3 extends BaseThreeObj {
   constructor() {
     super();
 
@@ -25,7 +25,7 @@ export default class Sphere extends BaseThreeObj {
     //   wireframe: false,
     //   alphamap: alphaMap
     // });
-    this.mat = new THREE.MeshBasicMaterial({ color: "#3A6C42", transparent: true, side: THREE.DoubleSide, roughness: 1 });
+    this.mat = new THREE.MeshBasicMaterial({ color: "#62A562", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5, opacity: 1, roughness: 1 });
     // this.mat = new THREE.MeshStandardMaterial({ color: "#444", transparent: true, side: THREE.DoubleSide, alphaTest: 0.5, opacity: 1, roughness: 1 });
 
     this.active = true;
@@ -36,9 +36,9 @@ export default class Sphere extends BaseThreeObj {
   update(audioData) {
     for (let i = 0; i < this.mesh.geometry.vertices.length; i++) {
 
-      this.mesh.geometry.vertices[i].x = this.initialGeomVertices[i].x * (audioData[i] / 80) * -1;
-      this.mesh.geometry.vertices[i].y = this.initialGeomVertices[i].y * (audioData[i] / 250) * -1;
-      this.mesh.geometry.vertices[i].z = this.initialGeomVertices[i].z * (audioData[i] / 80) * -1;
+      this.mesh.geometry.vertices[i].x = this.initialGeomVertices[i].x * (audioData[i] / 100) * -1;
+      this.mesh.geometry.vertices[i].y = this.initialGeomVertices[i].y * (audioData[i] / 300) * -1;
+      this.mesh.geometry.vertices[i].z = this.initialGeomVertices[i].z * (audioData[i] / 100) * -1;
     }
     this.mesh.geometry.verticesNeedUpdate = true;
   }

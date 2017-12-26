@@ -1,8 +1,13 @@
 'use strict';
 
+import SphereM1 from './objects/SphereM1';
 import Sphere from './objects/Sphere';
+import Sphere2 from './objects/Sphere2';
+import Sphere3 from './objects/Sphere3';
 import Plane from './objects/Plane';
 import Cube from './objects/Cube';
+import Cube2 from './objects/Cube2';
+import Cube3 from './objects/Cube3';
 import Ring from './objects/Ring';
 import THREE from 'three';
 
@@ -19,7 +24,7 @@ export default class Webgl {
 
     this.scene = new THREE.Scene();
 
-    this.camera = new THREE.PerspectiveCamera(50, width / height, 1, 1000);
+    this.camera = new THREE.PerspectiveCamera(20, width / height, 1, 1000);
     this.camera.position.z = 100;
     this.camera.lookAt(new THREE.Vector3(0, 0, 0))
 
@@ -41,10 +46,30 @@ export default class Webgl {
     this.cube = new Cube();
     this.cube.position.set(0, 0, 0);
     this.scene.add(this.cube);
+    this.cube2 = new Cube2();
+    this.cube2.position.set(5, 0, 0);
+    this.scene.add(this.cube2);
+    this.cube3 = new Cube3();
+    this.cube3.position.set(-5, 0, 0);
+    this.scene.add(this.cube3);
 
-    this.sphere = new Sphere();
-    this.sphere.position.set(0, 0, 0);
-    this.scene.add(this.sphere);
+
+    // this.sphere_m1 = new SphereM1();
+    // this.sphere_m1.position.set(0, -13, 0);
+    // this.scene.add(this.sphere_m1);
+
+    // this.sphere = new Sphere();
+    // this.sphere.position.set(0, 0, 0);
+    // this.scene.add(this.sphere);
+
+    // this.sphere2 = new Sphere2();
+    // this.sphere2.position.set(0, 8, 0);
+    // this.scene.add(this.sphere2);
+
+
+    // this.sphere3 = new Sphere3();
+    // this.sphere3.position.set(0, 18, 0);
+    // this.scene.add(this.sphere3);
 
     this.ring = new Ring();
     this.ring.position.set(0, 0, 0);
@@ -64,7 +89,7 @@ export default class Webgl {
     backgroundMesh .material.depthTest = false;
     backgroundMesh .material.depthWrite = false;
 
-    this.scene.add(backgroundMesh );
+    // this.scene.add(backgroundMesh );
 
   }
 
@@ -100,11 +125,21 @@ export default class Webgl {
 
     if(this.plane.active)
       this.plane.update(audiData);
-    if(this.sphere.active)
-      this.sphere.update(audiData);
+    // if(this.sphere_m1.active)
+    //   this.sphere_m1.update(audiData);
+    // if(this.sphere.active)
+    //   this.sphere.update(audiData);
+    // if(this.sphere2.active)
+    //   this.sphere2.update(audiData);
+    // if(this.sphere3.active)
+    //   this.sphere3.update(audiData);
     if(this.cube.active)
       this.cube.update(audiData);
-    if(this.ring)
-      this.ring.update(audiData);
+    if(this.cube2.active)
+      this.cube2.update(audiData);
+    if(this.cube3.active)
+      this.cube3.update(audiData);
+    // if(this.ring)
+    //   this.ring.update(audiData);
   }
 }

@@ -11,7 +11,7 @@ export default class Cube extends BaseThreeObj {
 
     this.geom = new THREE.CubeGeometry(25, 25, 25, 20, 5, 5);
 
-    this.mat = new THREE.MeshBasicMaterial({ color: "#E72A43", transparent: true, side: THREE.DoubleSide,  opacity: 0.8, roughness: 1 });
+    this.mat = new THREE.MeshBasicMaterial({ color: "#00A253", transparent: true, side: THREE.DoubleSide,  opacity: 0.8, roughness: 1 });
 
     this.active = true;
     this.addMesh();
